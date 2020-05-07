@@ -2,6 +2,7 @@
 Jogo Zuma em console C# utilizando os conceitos de Lista duplamente encadeadas.
 
 ## Funcionalidades Desenvolvidas
+* Máquina de estados finitos
 * Menu
 * Inserção de bolas na lista
 * Remoção em área de bolas

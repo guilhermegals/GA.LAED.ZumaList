@@ -2,8 +2,10 @@
 using GA.LAED.ZumaList.Values;
 using System;
 
-namespace GA.LAED.ZumaList.Games {
-    public class ZumaGame : Game {
+namespace GA.LAED.ZumaList.Games
+{
+    public class ZumaGame : Game
+    {
 
         public const int MAX_LIST_BALLS = 20;
         public const int START_LIST_BALLS = 8;
@@ -15,7 +17,8 @@ namespace GA.LAED.ZumaList.Games {
 
         #region [ Constructor ]
 
-        public ZumaGame() {
+        public ZumaGame()
+        {
             this.State = GameState.Menu;
             this.Score = 0;
         }
@@ -24,13 +27,17 @@ namespace GA.LAED.ZumaList.Games {
 
         #region [ Game ]
 
-        protected override void GameConfiguration() {
+        protected override void GameConfiguration()
+        {
             Console.Title = Text.GameText.TITLE;
         }
 
-        protected override void GameLoop() {
-            while (true) {
-                switch (this.State) {
+        protected override void GameLoop()
+        {
+            while (true)
+            {
+                switch (this.State)
+                {
                     case GameState.Menu:
                         this.Menu();
                         break;
@@ -58,10 +65,12 @@ namespace GA.LAED.ZumaList.Games {
 
         #region [ Game States ]
 
-        private void Menu() {
+        private void Menu()
+        {
             int option;
 
-            do {
+            do
+            {
                 Console.Clear();
                 ConsoleGame.PrintCenterLine(Text.GameText.TITLE);
                 ConsoleGame.PrintCenterLine(Text.GameText.LINE);
@@ -75,7 +84,8 @@ namespace GA.LAED.ZumaList.Games {
                 ConsoleGame.PrintCenter(Text.GameText.WRITE);
                 option = Convert.ToInt32(Console.ReadLine());
 
-                switch (option) {
+                switch (option)
+                {
                     case 0:
                         this.State = GameState.Exit;
                         break;
@@ -91,13 +101,16 @@ namespace GA.LAED.ZumaList.Games {
             } while (option > 2 || option < 0);
         }
 
-        private void InGame() {
+        private void InGame()
+        {
             Console.Clear();
 
             ListBall listBall = new ListBall(MAX_LIST_BALLS, START_LIST_BALLS);
             ListBall playerBalls = new ListBall(MAX_PLAYER_BALLS, START_PLAYER_BALLS);
             this.Score = 0;
-            do {
+            do
+            {
+                Console.Clear();
                 ConsoleGame.PrintCenterLine(Text.GameText.TITLE);
                 ConsoleGame.PrintCenterLine(Text.GameText.LINE);
 
@@ -127,7 +140,8 @@ namespace GA.LAED.ZumaList.Games {
 
                 Ball ball = playerBalls.RemoveAt(ballPosition);
 
-                if (ball != null) {
+                if (ball != null)
+                {
                     listBall.InsertAt(ball, position);
                     int itensRemoved = listBall.RemoveGroup(position, ball.Color);
                     if (itensRemoved > 0)
@@ -135,16 +149,14 @@ namespace GA.LAED.ZumaList.Games {
                     listBall.AddNewBall();
                     playerBalls.AddNewBall();
                 }
-
-                Console.Clear();
-
             } while (!listBall.Empty() && !listBall.Full());
 
             if (listBall.Full())
                 this.State = GameState.GameOver;
         }
 
-        private void GameOver() {
+        private void GameOver()
+        {
             Console.Clear();
             ConsoleGame.PrintCenterLine(Text.GameText.TITLE);
             ConsoleGame.PrintCenterLine(Text.GameText.LINE);
@@ -160,7 +172,8 @@ namespace GA.LAED.ZumaList.Games {
             this.State = GameState.Menu;
         }
 
-        private void Credits() {
+        private void Credits()
+        {
             Console.Clear();
             ConsoleGame.PrintCenterLine(Text.GameText.TITLE);
             ConsoleGame.PrintCenterLine(Text.GameText.LINE);
@@ -175,7 +188,8 @@ namespace GA.LAED.ZumaList.Games {
             this.State = GameState.Menu;
         }
 
-        private void Exit() {
+        private void Exit()
+        {
             Console.Clear();
             ConsoleGame.NewLine();
             ConsoleGame.NewLine();

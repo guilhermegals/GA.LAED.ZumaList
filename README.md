@@ -1,24 +1,26 @@
 # Zuma Game List
-Jogo Zuma em console C# utilizando os conceitos de Lista duplamente encadeadas.
+Zuma game developed in C # console using doubly linked list concepts.
 
-## Funcionalidades Desenvolvidas
-* Máquina de estados finitos
+## Features developed
+* Finite state machine
 * Menu
-* Inserção de bolas na lista
-* Remoção em área de bolas
+* Ball's insertions
+* Ball's removes
 
-# Tecnologias Utilizados
-* Console C#
+# Technologies
+* C# Console
 
-## Telas
+## Screens
 **Menu** <br/>
 ![Menu](https://github.com/guilhermegals/Imagens/blob/master/ZumaListMenu.png "Menu")
 
-**Créditos** <br/>
-![Créditos](https://github.com/guilhermegals/Imagens/blob/master/ZumaListCredits.png "Créditos")
+**Credits** <br/>
+![Credits](https://github.com/guilhermegals/Imagens/blob/master/ZumaListCredits.png "Credits")
 
-**Jogo** <br/>
-![Jogo](https://github.com/guilhermegals/Imagens/blob/master/ZumaListInGame.png "Jogo")
+**Game** <br/>
+![Game](https://github.com/guilhermegals/Imagens/blob/master/ZumaListInGame.png "Game")
 
 **Game Over** <br/>
 ![Game Over](https://github.com/guilhermegals/Imagens/blob/master/ZumaListGameOver.png "Game Over")
+
+**Developed by Guilherme Augusto Leite Santos in 2020**
